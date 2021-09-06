@@ -22,7 +22,13 @@ const Search =()=> {
          setResults(data.query.search)
         //  console.log(data)
        }
-       if (term) search()
+       const timeout = setTimeout(() =>{
+        if (term) search()
+       }, 500);
+       
+       return ()=>{
+        clearTimeout(timeout)
+       };
     }, [term])
 
     const renderedResults = results.map((result) => {
