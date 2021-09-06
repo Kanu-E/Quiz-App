@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const Search =()=> {
 
-    const [term, setTerm] = useState('');
+    const [term, setTerm] = useState('programming');
     const [results, setResults] = useState([]);
    
 
@@ -20,15 +20,9 @@ const Search =()=> {
             }
            })
          setResults(data.query.search)
-
-       };
-       const timeOut = setTimeout(() => {
-            if (term) search() 
-       } , 1000);
-
-       return () =>{
-           clearTimeout(timeOut)
-       };
+        //  console.log(data)
+       }
+       if (term) search()
     }, [term])
 
     const renderedResults = results.map((result) => {
@@ -47,7 +41,7 @@ const Search =()=> {
            
         )
     })
-
+    
     return(
     <div>
         <div className = "ui form">
