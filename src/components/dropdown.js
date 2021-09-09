@@ -1,9 +1,14 @@
-import React, {useState} from 'react'; 
+import React, {useState, useEffect} from 'react'; 
 
 
 
 const Dropdown =({options, selected, onSelectedChange})=>{
     const [open, setOpen] = useState(false)
+        useEffect(()=>{
+        document.body.addEventListener('click',()=>{
+            console.log('Clicked')
+        });
+    },[])
     const renderedOptions = options.map((option)=>{
         if (option.value === selected.value) {
             return null
@@ -16,8 +21,8 @@ const Dropdown =({options, selected, onSelectedChange})=>{
             >
                 {option.label}      
             </div>
-    );
-});
+        );
+    });
     return (
         <div className ="ui form">
             <div className = "field">
