@@ -13,7 +13,10 @@ const Dropdown =({options, selected, onSelectedChange})=>{
             if(ref.current.contains(event.target)) return
              setOpen(false)
          }
-        document.body.addEventListener('click',onBodyClick ,{capture: true});
+        document.body.addEventListener('click', onBodyClick ,{capture: true});
+        return ()=>{
+            document.body.removeEventListener('click', onBodyClick ,{capture: true});
+        }
     },[])
     
     const renderedOptions = options.map((option)=>{
