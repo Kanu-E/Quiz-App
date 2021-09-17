@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 // import Accordion from './components/Accordion'
-// import Search from './components/search'
+import Search from './components/search'
 // import Dropdown from './components/dropdown'
 import Translate from './components/Translate'
 // const items = [{title: 'What is React?' , content: 'React is a frontent javascript framework'},{title: "Why use React?", content :"React is a favourite JS library among engineers"}, {title:"bb", content: "jj"}]
